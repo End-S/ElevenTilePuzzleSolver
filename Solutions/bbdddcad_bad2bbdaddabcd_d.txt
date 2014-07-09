@@ -1,0 +1,4 @@
+bbd  bbd  bbd  bbd  bbd  bbd  bbd  bbd  bbd  bbd  bbd  
+ddc  dd_  d_d  _dd  add  add  add  add  add  add  add  
+ad_  adc  adc  adc  _dc  d_c  dac  dac  _ac  a_c  abc  
+bad  bad  bad  bad  bad  bad  b_d  _bd  dbd  dbd  d_d  
