@@ -9,7 +9,6 @@ import java.util.LinkedList;
  * User: Robert
  * Date: 26/02/14
  * Time: 14:11
- * To change this template use File | Settings | File Templates.
  */
 public class Print {
     /**
@@ -66,7 +65,7 @@ public class Print {
             }else if(i>=routeSize*3 && i<routeSize*4){
                 output.print(route.get(index).substring(9, 12));
             }
-            output.print("  ");
+            output.print(" ");
             index++;
             if(index>=routeSize){
                 index=0;

@@ -5,7 +5,6 @@ import java.util.LinkedList;
  * User: Robert
  * Date: 18/02/14
  * Time: 10:22
- * To change this template use File | Settings | File Templates.
  */
 public class Main {
 
@@ -21,6 +20,6 @@ public class Main {
 
         //LinkedList<String> route = search2.uniformCost(start,dest);
         LinkedList<String> route = search2.aStar(start,dest);
-        printer.printToFile(start,dest,route);
+        //printer.printToFile(start,dest,route);
     }
 }

@@ -8,7 +8,6 @@ import java.util.PriorityQueue;
  * User: Robert
  * Date: 23/02/14
  * Time: 11:48
- * To change this template use File | Settings | File Templates.
  */
 public class Search2 {
     Tiles tiles = new Tiles();
@@ -24,12 +23,12 @@ public class Search2 {
         LinkedList<String> route = new LinkedList<>();
         route.add(start);
         PriorityQueue pairs = new PriorityQueue();
-        pairs.add(new Pair(0.0, route));
+        pairs.add(new Path(0.0, route));
         while(true){
             System.out.println(pairs);
             if(pairs.size()==0)return null;
-            Pair pair = (Pair)pairs.poll();//retrieve and remove the first element
-            route = pair.getRoute();
+            Path path = (Path)pairs.poll();//retrieve and remove the first element
+            route = path.getRoute();
             String last = route.getLast();
             if (last.equals(dest))return route;
 
@@ -39,7 +38,7 @@ public class Search2 {
                     LinkedList<String> nextRoute = new LinkedList<>(route);
                     nextRoute.addLast(next);
                     double distance = actualMoves(nextRoute);
-                    pairs.add(new Pair(distance,nextRoute));
+                    pairs.add(new Path(distance,nextRoute));
                 }
             }
         }
@@ -54,13 +53,13 @@ public class Search2 {
      public LinkedList<String> aStar(String start, String dest){
          LinkedList<String>route=new LinkedList<>();
          route.add(start);
-         PriorityQueue pairs = new PriorityQueue();
-         pairs.add(new Pair(estimateMoves(start, dest),route));
+         PriorityQueue paths = new PriorityQueue();
+         paths.add(new Path(estimateMoves(start, dest), route));
          while(true){
-             //System.out.println(pairs);
-             if (pairs.size()==0)return null;
-             Pair pair = (Pair)pairs.poll();
-             route=pair.getRoute();
+             //System.out.println(paths);
+             if (paths.size()==0)return null;
+             Path path = (Path)paths.poll();
+             route= path.getRoute();
              String last=route.getLast();
              if(last.equals(dest))return route;
              LinkedList<String>nextMoves=tiles.nextMove(last);
@@ -70,7 +69,7 @@ public class Search2 {
                      nextMove.addLast(next);
                      int distance = actualMoves(nextMove);
                      distance+=estimateMoves(next, dest);
-                     pairs.add(new Pair(distance,nextMove));
+                     paths.add(new Path(distance, nextMove));
                  }
              }
          }

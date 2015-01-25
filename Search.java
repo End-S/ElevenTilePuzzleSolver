@@ -6,7 +6,6 @@ import java.util.LinkedList;
  * User: Robert
  * Date: 19/02/14
  * Time: 11:05
- * To change this template use File | Settings | File Templates.
  */
 public class Search {
     Tiles tiles = new Tiles();
